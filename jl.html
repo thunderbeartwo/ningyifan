@@ -1,0 +1,224 @@
+<!DOCTYPE html><html>
+<head>
+	<meta charset="utf-8">
+	<title>我的个人简历</title>
+	<link rel="stylesheet" href="lib/css/color.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body >
+	<div class="jumbotron text-center" style="margin-bottom:0" id="grad1">
+		<img src="img/宁贻帆.jpg" width="80px" height="80px" />
+		<h3>宁贻帆</h3>
+		<p style="font-size: 15px;">2019年升入柳州铁道职业技术学院，<br/>学习软件编程，对编程有浓厚的兴趣，
+		在老师的指导，<br/>和自己的课下练习，渐渐对编程有了更深入的了解。<br/>在课余时间，
+		我喜欢唱歌、跑步和打乒乓球。<br/>喜好结交志同道合的朋友，一起分享学习的生活的经验。<br/>
+		有良好的团队意识，学习时认真负责。            </p>
+	</div>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!--<a class="navbar-brand" href="#">专业技能</a>-->
+			</div>
+			<div id="relation">
+				<table  class="table table-striped">
+					<tbody>
+						<tr align="center">
+							<td><a href="#email"><button type="button" class="btn btn-primary btn-lg">
+							<span class="glyphicon glyphicon-envelope"></span>
+							</button></a></td>
+							<td> <a href="#email"><button type="button" class="btn btn-primary btn-lg">
+							<span class=" glyphicon glyphicon-earphone"></span>
+							</button></a></td>
+							<td><a href="https://me.csdn.net/qq_44892582" target="_blank"><button type="button" class="btn btn-primary btn-lg">
+							<span class=" glyphicon glyphicon-user"></span>
+							</button></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav nav-pills nav-justified">
+					<li><a href="#main">专业技能</a></li>
+					<li><a href="#project">项目经验</a></li>
+					<li><a href="#myCarousel">作品展示</a></li>
+					<li><a href="#education">教育经历</a></li>
+					<li><a href="#relation">联系方式</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	<div id="main" style="width:50%;height:400px;left: 25%;"></div>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('main'));
+		// 指定图表的配置项和数据
+		var option = {
+		title: {
+		text: '专业技能平均分'
+		},
+		tooltip: {},
+		legend: {
+		data:['分数'],
+		},
+		xAxis: {
+		data: ["Java语言","mysql数据库","Javascript语言","web开发","ssm框架","springboot框架"],axisLabel: {
+		// inside: true, 隐藏x轴内容
+		// 改变x轴字体颜色
+		//     textStyle: {
+		//         color: '#8B4500'
+		//     }
+		},
+		},
+		yAxis: {},
+		series: [{
+		name: '分数',
+		type: 'bar',
+		//改变图表颜色
+		color:['#8EE5EE'],
+		data: [85, 95, 82, 90, 80, 80]
+		}],
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+	</script>
+	<ul class="list-unstyled" align="center">
+		<li>Java基础:<br/>
+		我入门时首先学的就是Java基础，然后再到Java高级开发，<br/>
+		在学习过程中老师细致的教学为我们打下了牢固的java基础。              </li>
+		<li>mysql数据库:<br/>
+		mysql数据库是我们大一第二学期开的课，配合Java高级开发一起学习的科目，<br/>
+		因为自己本身就喜欢数据库的一些东西，所有mysql数据库也有良好的基础。</li>
+		<li>Javascript语言：<br/>
+		在学JavaScript之前我有良好的html5和css基础，所学习JavaScript时也是十分顺利的掌握了课本里的内容。</li>
+		<li>web开发:<br/>
+		web开发是我最喜爱的科目之一，servlet的学习给我启发深刻。</li>
+		<li>ssm框架:<br/>
+		ssm框架相比springboot而言是比较繁琐的，但是在学习和理解起来却比springboot更容易让人掌握。</li>
+		<li>springboot框架:<br/>
+		springboot框架入门起来十分迅速，在基础的使用起来也是十分方便，但查看源码时，没有ssm容易让人理解。</li>
+	</ul>
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3 class="text-info" id="project">项目名称</h3>
+				<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#car">新能源汽车项目</a></li>
+				<li><a href="#city">咕泡商城项目</a></li>
+				<li><a href="#bug">爬虫项目</a></li>
+				</ul>
+				<hr class="hidden-sm hidden-md hidden-lg">
+			</div>
+			<div class="col-sm-8" align="left">
+			<h3 class="text-info">项目内容</h3>
+			<h2 id="car">新能源汽车</h2>
+			<h5>企业saas工坊</h5>
+			<p>新能源汽车项目是我们掌握smm框架知识后第一个实战项目，该项目由工坊老师指导下，前后端都由我们个人独立完成的项目。
+			该项目用到了，html5+css3，mysql数据库，spring，mybatis，springmvc框架，ajax，JavaScript，web，bootstrap，echarts，sweetalert
+			等技术。项目从开始到完成我们用了2个月的时间。该项目的主要是写一个汽车app社交平台，包括用户登录注册，用户上传车辆信息，统计用户车辆，分析故障车辆原因，
+			以及导航、朋友圈等功能一体的汽车平台。该项目用户的使用方法如下：        <p>1.新用户进行登录注册。</p>
+			<p>2.登录成功后新用户可以进行修改密码、昵称、头像等个人信息。</p>
+			<p>3.新用户上传自己车辆信息，并绑定账号。</p>
+			<p>4.新用户可以上传自己车辆故障，系统自动查询车辆故障原因以及维修方案。</p>
+			<p>5.用户可以添加车友，在车友圈发布求助信息等。</p>
+			<p>6.用户还可以进行地图导航，以及查询公交车，出租车，飞机等交通工具的时间和行程。</p>
+			<p> 通过完成这个项目，让我获得了很大的进步。不论是前端知识还是后端知识，在该项目上
+			都得到了充分的展示。让我也一下子吸收了很多的知识与技能，为后面的项目打下了坚实的基础。</p>
+			</p>
+			<br>
+			<h2 id="city">咕泡商城</h2>
+			<h5>企业saas工坊</h5>
+			<p>咕泡商城项目是我们学完springboot之后的实战项目，该项目由工坊老师指导下，前后端都由我们个人独立完成的项目。
+			该项目用到了，html5+css3,mysql数据库,springboot框架,maven,web,javascript,jquery,ajax,echarts,bootstrap等技术。
+			项目从开始到完成我们用了10天的时间。该项目主要是写一个网上商城电商购物平台，包括用户登录注册，用户绑定信息，上传头像、昵称等个人信息，
+			用户主要可以在该平台上面购买各种商品，每种商品都做好了分类管理，用户点击分类名称或者准确搜索都能显示出自己想要的商品。用户点击商品就可以
+			链接到商品详情页面，不论是购物还是浏览商品都非常的方便。该项目用户的使用方法：        <p>1.新用户进行登录注册。</p>
+			<p>2.登录成功后新用户可以进行修改密码、昵称、头像等个人信息。</p>
+			<p> 3.用户自由购买和浏览商品信息。</p>
+			该项目让我们体验了springboot的配置强大之处，没有繁琐的多余配置文件，所有配置都由一个配置文件解决，简化了我们smm框架配置的痛苦。      </p>
+			<br>
+			<h2 id="bug">爬虫</h2>
+			<h5>企业saas工坊</h5>
+			<p>爬虫项目是我们最近才做完的项目。该项目与以往项目不同，该项目是由工坊老师指导下，我们首次前后端分离合作的项目。一个团体3个人，分别做前端展示数据，后端爬取数据和数据清洗。
+			我在这个项目中做的是后端爬取数据。我用到了，httpclient，jsoup，webmagic，springboot，maven，mysql等技术。该项目主要是爬去51job网站上面的工作岗位，
+			我们主要爬取了与我们软件相关的工作岗位，共爬取了2万条数据处理并展示。该项目执行步骤如下：        <p>1.后端爬取数据并存到数据库。</p>
+			<p>2.中间清洗数据，将数据改变为前端人员需要的格式。</p>
+			<p>3.前端人员根据需求展示数据。</p>
+			该项目让我们体会到了团队合作和团队分工明确的重要性，每个人做好属于自己的一份任务，环环相扣才能保质保量的完成项目。      </p>
+			</div>
+		</div>
+	</div>
+	<div id="myCarousel" class="carousel slide" style="border: solid; border-color: cornflowerblue;">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner" align="center" >
+			<div class="item active">
+				<img src="img/imgs38.jpg" style="width: 80%;height: 800px; border: solid 5px; border-color: lightslategray;" alt="First slide">
+			</div>
+			<div class="item">
+				<img src="img/1-2.jpg" style="width: 80%;height: 800px; border: solid 5px; border-color: lightslategray;" alt="Second slide">
+			</div>
+			<div class="item">
+				<img src="img/1.jpg" style="width: 80%;height: 800px; border: solid 5px; border-color: lightslategray;" alt="Second slide">
+			</div>
+			<div class="item">
+				<img src="img/1-3.jpg" style="width: 80%;height: 800px; border: solid 5px; border-color: darkgray;" alt="Third slide">
+			</div>
+		</div>
+		<!-- 轮播（Carousel）导航 -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<div style="width: 100%; height: 220px; " >
+		<table class="table">
+			<caption style="text-align: center;"><h3 id="education" style="color: black;">教育经历</h3></caption>
+			<tbody style="text-align: center;">
+				<tr>
+					<td>2007.9.-2013.7</td>
+					<td>就读于xx小学</td>
+				</tr>
+				<tr>
+					<td>2013.9-2016.7 </td>
+					<td> 就读于xx初中</td>
+				</tr>
+				<tr>
+					<td>2016.9-2019.7 </td>
+					<td> 就读于xx高级中学</td>
+				</tr>
+				<tr>
+					<td>2019.9-至今 </td>
+					<td> 就读于柳州铁道职业技术学院</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="jumbotron text-center" style="margin-bottom:0" >
+		<p id="email" align="left">
+		邮箱:1091752265@qq.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话号码：13877172937
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人博客:</p>
+	</div>
+</body>
+</html>
